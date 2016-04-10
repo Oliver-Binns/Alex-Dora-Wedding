@@ -8,6 +8,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="noindex">
 		<title>Alex & Dora</title>
 	</head>
