@@ -6,4 +6,41 @@
 .navbar .navbar-collapse {
     text-align: center;
 }
+.background{
+	background-color:lightblue;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:-1;
+}
+.body-sections{
 
+}
+section{
+	padding-top:61px;
+	padding-bottom:10px;
+}
+.section0{
+	width:100%;
+	height:100%;
+}
+.section1{
+	width:100%;
+	height:100%;
+	background-color:rgb(77,77,77);
+}
+.icons{
+	margin:auto;
+	color:white;
+	font-size:25px;
+	width:300px;
+}
+.icons span{
+	margin-left:25px;
+	margin-right:25px;
+}
+.icons span:hover{
+	color:rgba(255,255,255,0.5);
+}
