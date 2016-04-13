@@ -49,7 +49,8 @@
 			], 'body-sections');
 
 			echo new JSObject('',JSObject::libraryLink('jquery', '2.2.3'));
-        		echo new JSObject('','bootstrap/dist/js/bootstrap.min.js');
+            echo new JSObject('','bootstrap/dist/js/bootstrap.min.js');
+            echo new JSObject('','scripts/scripts.js');
 		?>
 	</body>
 </html>
