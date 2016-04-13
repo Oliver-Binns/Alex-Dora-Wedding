@@ -8,8 +8,16 @@ $(function() {
                 $('html, body').animate({
                     scrollTop: target.offset().top
                 }, 1000);
+                window.history.replaceState(null, "Alex & Dora", location.origin + '/' + this.hash);
                 return false;
             }
         }
     });
+});
+
+//Set up Maps-
+$(function(){
+    var input = /** @type {!HTMLInputElement} */(
+        document.getElementById('car-input'));
+    var autocomplete = new google.maps.places.Autocomplete(input);
 });
