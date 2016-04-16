@@ -21,3 +21,8 @@ $(function(){
         document.getElementById('car-input'));
     var autocomplete = new google.maps.places.Autocomplete(input);
 });
+
+function switchTravel(travelType){
+	$('.travel_option').addClass('do_not_show');
+	$('.travel_' + travelType).removeClass('do_not_show');
+}
