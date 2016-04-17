@@ -75,6 +75,9 @@ h1{
 .icons span:hover{
 	color:rgba(255,255,255,0.5);
 }
+.currency{
+	display:inline-block;
+}
 .do_not_show{
 	display:none;
 }
