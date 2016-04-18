@@ -2,6 +2,8 @@
 	include 'phpUI/autoloader.php';
 	use phpHTML\UICore\UIDiv;
 	use phpHTML\UICore\UIHeading;
+	use phpHTML\UICore\UIInput\UIDatePicker;
+	use phpHTML\UICore\UIInput\UIDropdown;
 	use phpHTML\UICore\UIInput\UITextBox;
     use phpHTML\UICore\UIInput\UITextInput;
     use phpHTML\UICore\UIPage\UINav;
@@ -58,35 +60,60 @@
 		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-car']), '', 'switchTravel("car");')
                                 ], 'icons'),
 							new UIDiv(
-									['Volos (Nea Anchilalos) - 25 km'],
+									[
+										new UIHeading(2, 'Travel by Plane'),
+										'Volos (Nea Anchilalos) - 25 km'
+									],
 									['travel_option', 'travel_plane', 'row']
 							),
 							new UIDiv(
-									['Volos is the third largest port in Greece after Pireaus and Thessaloniki. Regular ferries run between Volos and Skiathos, Skopelos, Alonnisos, Glossa and Mantoudi.'],
+									[
+										new UIHeading(2, 'Travel by Sea'),
+										'Volos is the third largest port in Greece after Pireaus and Thessaloniki. Regular ferries run between Volos and Skiathos, Skopelos, Alonnisos, Glossa and Mantoudi.'
+									],
 									['travel_option', 'travel_ship', 'row', 'do_not_show']
 							),
 							new UIDiv(
-									['Volos is home to a wonderful Bavarian style railway station which is the final stop on the branch line between Volos and Larissa. Trains run on this line every hour or two throughout the day from early morning to late evening. At Larissa you can change for the Green mainline and regular services to Athens (c. 5 hours) and Thessaloniki (c. 3 hours). A daily international rail service runs between Thessaloniki and Sofia in Bulgaria, Belgrade in Serbia and Skopje in Macedonia. For more details and train times visit http://www.trainose.gr/en/'],
+									[
+										new UIHeading(2, 'Travel by Train'),
+										'Volos is home to a wonderful Bavarian style railway station which is the final stop on the branch line between Volos and Larissa. Trains run on this line every hour or two throughout the day from early morning to late evening. At Larissa you can change for the Green mainline and regular services to Athens (c. 5 hours) and Thessaloniki (c. 3 hours). A daily international rail service runs between Thessaloniki and Sofia in Bulgaria, Belgrade in Serbia and Skopje in Macedonia. For more details and train times visit http://www.trainose.gr/en/'
+									],
 									['travel_option', 'travel_train', 'row', 'do_not_show']
 							),
 							new UIDiv(
 									[
-											'Prebooked taxis can be hired during non peak times from Athens airport to Volos at a price of ',
-											new UIDiv('65', 'currency'),
-											' per person in a shared taxi or ',
-											new UIDiv('260', 'currency'),
-											' for a private taxi. It may be possible to share a taxi with other guests so do get in touch if you would like to travel to Volos by taxi.'],
+										new UIHeading(2, 'Travel by Taxi'),
+										'Prebooked taxis can be hired during non peak times from Athens airport to Volos at a price of ',
+										'<div data-price="65" class="currency"></div>',
+										' per person in a shared taxi or ',
+										'<div data-price="260" class="currency"></div>',
+										' for a private taxi. It may be possible to share a taxi with other guests so do get in touch if you would like to travel to Volos by taxi.'
+									],
 									['travel_option', 'travel_taxi', 'row', 'do_not_show']
 							),
 							new UIDiv(
-									['Coaches in Greece are clean, air-conditioned and equipped with WiFi. You can take a coach to Volos from Athens, Thessaloniki and several other large cities across the country. Please visit http://www.ktelvolou.gr to plan your journey.'],
+									[
+										new UIHeading(2, 'Travel by Coach'),
+										'Coaches in Greece are clean, air-conditioned and equipped with WiFi. You can take a coach to Volos from Athens, Thessaloniki and several other large cities across the country. Please visit http://www.ktelvolou.gr to plan your journey.'
+									],
 									['travel_option', 'travel_coach', 'row', 'do_not_show']
 							),
                             new UIDiv([
                                 new UIDiv([
-                                    'Volos is located <span title="327 km">202 miles</span> from Athens and <span title="208 km">129 miles</span> from Thessaloniki. The E75 national motorway passes close by and the city centre can be reached by taking the exit onto the E92 motorway. The motorways are well signposted, but please note there are a number of toll stations so keep plenty of loose change! Cars can be hired from Athens and Thessaloniki airports.'
+	                                new UIHeading(2, 'Travel by Car'),
+                                    'Volos is located <span title="327 km">202 miles</span> from Athens and <span title="208 km">129 miles</span> from Thessaloniki. The E75 national motorway passes close by and the city centre can be reached by taking the exit onto the E92 motorway. The motorways are well signposted, but please note there are a number of toll stations so keep plenty of loose change!',
                                 ], 'col-xs-12'),
+	                            //Hire a Car
                                 new UIDiv([
+	                                new UIHeading(3, 'Hire a Car'),
+	                                new UIDiv(new UIDropdown([[], ['value' => 'ATH', 'text' => 'Athens Airport'], ['value' => 'SKG', 'text' => 'Thessaloniki Airport'], ['value' => 'VOL', 'text' => 'Volos Airport']], '', 'airportToHire', 'getCarHirePrices()'), 'col-xs-4'),
+	                                new UIDiv(new UITextBox('2016-06-04', 'arrivalForHire'), 'col-xs-4'),
+	                                new UIDiv(new UITextBox('2016-06-08', 'departureForHire'), 'col-xs-4'),
+	                                new UIDiv([], 'car-hire-results')
+                                ], 'col-xs-12'),
+	                            //Get Directions
+                                new UIDiv([
+	                                new UIHeading(3, 'Get Directions'),
                                     new UITextBox('', '', 'Enter a location..', '', false, 'form-control', 'car-input')
                                 ], 'col-xs-12')
                             ], ['travel_option', 'travel_car', 'row', 'do_not_show']),

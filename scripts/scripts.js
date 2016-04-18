@@ -6,14 +6,17 @@ $(function(){
 		url: 'https://api.fixer.io/latest'
 	}).done(function(data){
 		currency = data.rates;
-		$(".currency").each(function(index) {
-			var pounds = '£' + (this.innerHTML * currency.GBP).toFixed(2);
-			this.title = pounds;
-		});
-		$('.currency').append('€');
-
+		addCurrencies();
 	});
 });
+
+function addCurrencies(){
+	$(".currency").each(function(index) {
+		var price = this.getAttribute('data-price');
+		this.title = '£' + (price * currency.GBP).toFixed(2);
+		this.innerHTML = '€' + price;
+	});
+}
 
 $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
@@ -56,4 +59,39 @@ function switchTravel(travelType){
 }
 
 //Car Hire URL.
-//https://api.sandbox.amadeus.com/v1.2/cars/search-airport?apikey=ZcEbYv1YD3fcNTOH9mEUmFTQAkUxph19&location=VOL&pick_up=2016-06-04&drop_off=2016-06-08&lang=EN&currency=EUR
+function getCarHirePrices(){
+	var airport = $('[name=airportToHire]').val();
+	var pickUp = $('[name=arrivalForHire]').val();
+	var dropOff = $('[name=departureForHire]').val();
+
+	$.ajax({
+		url: 'https://api.sandbox.amadeus.com/v1.2/cars/search-airport?apikey=ZcEbYv1YD3fcNTOH9mEUmFTQAkUxph19&location=' + airport + '&pick_up='+ pickUp +'&drop_off=' + dropOff + '&lang=EN&currency=EUR'
+	}).done(function(data){
+		var results = data.results;
+		console.log(results);
+		$('.car-hire-results').html('');
+		for(var i = 0; i < results.length; i++){
+			var name = results[i].provider.company_name;
+
+			var cars = results[i].cars;
+			var min = cars[0].estimated_total.amount;
+			var max = 0;
+			for(var j = 0; j < cars.length; j++){
+				min = Math.min(cars[i].estimated_total.amount, min);
+				max = Math.max(cars[i].estimated_total.amount, max);
+			}
+			var priceText = '';
+			if(min == max){
+				priceText = 'Priced at ' + getCurrencyDiv(min) + '.';
+			}else{
+				priceText = 'Prices from ' + getCurrencyDiv(min) + ' to ' + getCurrencyDiv(max) + '.';
+			}
+			$('.car-hire-results').append('<h4>'+name+'</h4>' + priceText);
+		}
+		addCurrencies();
+	});
+}
+
+function getCurrencyDiv(cost){
+	return '<div data-price="'+cost+'" class="currency"></div>'
+}
