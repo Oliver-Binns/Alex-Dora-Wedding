@@ -17,7 +17,9 @@ a{
     text-align: center;
 }
 .background{
-	background-color:lightblue;
+	background-image:url('../img/main.jpg');
+	background-size:cover;
+	background-position-y:50px;
 	position:fixed;
 	top:0;
 	left:0;

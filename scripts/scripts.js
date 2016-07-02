@@ -1,6 +1,10 @@
 /* Smooth scrolling to anchor points */
 var currency = [];
 $(function(){
+	//Add Date pickers for date objects
+	$('.date-input').datepicker({
+		format: 'dd-mm-yyyy'
+	});
 	//Gets the current currency values.
 	$.ajax({
 		url: 'https://api.fixer.io/latest'
@@ -64,8 +68,10 @@ function getCarHirePrices(){
 	var pickUp = $('[name=arrivalForHire]').val();
 	var dropOff = $('[name=departureForHire]').val();
 
+	console.log('../amadeus/makeCall.php?transport=car_hire&airport=' + airport + '&pickUp=' + pickUp + '&dropOff=' + dropOff);
+
 	$.ajax({
-		url: 'https://api.sandbox.amadeus.com/v1.2/cars/search-airport?apikey=ZcEbYv1YD3fcNTOH9mEUmFTQAkUxph19&location=' + airport + '&pick_up='+ pickUp +'&drop_off=' + dropOff + '&lang=EN&currency=EUR'
+		url: '../amadeus/makeCall.php?transport=car_hire&airport=' + airport + '&pickUp=' + pickUp + '&dropOff=' + dropOff
 	}).done(function(data){
 		var results = data.results;
 		console.log(results);

@@ -12,12 +12,12 @@
 	use phpHTML\UICore\UIParagraph;
 	use phpHTML\UICore\UISection;
 	use phpHTML\UICore\UISpan;
-
 ?>
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker.min.css">
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="styles/styles.css?v=1.01">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,13 @@
 				new UILink('Recommendations', '#recommendations')
 			], [], [], UINav::FIXED_TOP);
 
-			echo new UISection([new UIHeading(1, 'Alex & Dora')], 'background');
+			echo new UISection(
+					[
+							new UIHeading(1, 'Alex & Dora'),
+							new UIHeading(4, '27<sup>th</sup> July 2017')
+					],
+					'background'
+			);
 
 			echo new UIDiv([
 				new UILink('','','','','home'),
@@ -107,15 +113,17 @@
                                 new UIDiv([
 	                                new UIHeading(3, 'Hire a Car'),
 	                                new UIDiv(new UIDropdown([[], ['value' => 'ATH', 'text' => 'Athens Airport'], ['value' => 'SKG', 'text' => 'Thessaloniki Airport'], ['value' => 'VOL', 'text' => 'Volos Airport']], '', 'airportToHire', 'getCarHirePrices()'), 'col-xs-4'),
-	                                new UIDiv(new UITextBox('2016-06-04', 'arrivalForHire'), 'col-xs-4'),
-	                                new UIDiv(new UITextBox('2016-06-08', 'departureForHire'), 'col-xs-4'),
+	                                new UIDiv(new UITextBox('22-06-2017', 'arrivalForHire', 'Select Arrival Date'), ['col-xs-4','date-input']),
+	                                new UIDiv(new UITextBox('29-06-2017', 'departureForHire', 'Select Departure Date'), ['col-xs-4','date-input']),
 	                                new UIDiv([], 'car-hire-results')
-                                ], 'col-xs-12'),
+                                ], 'row'),
 	                            //Get Directions
                                 new UIDiv([
-	                                new UIHeading(3, 'Get Directions'),
-                                    new UITextBox('', '', 'Enter a location..', '', false, 'form-control', 'car-input')
-                                ], 'col-xs-12')
+	                                new UIDiv([
+	                                    new UIHeading(3, 'Get Directions'),
+                                        new UITextBox('', '', 'Enter a location..', '', false, 'form-control', 'car-input')
+	                                ], 'col-xs-12')
+                                ], 'row')
                             ], ['travel_option', 'travel_car', 'row', 'do_not_show']),
 						], 'container')
 				], 'travel'),
@@ -125,6 +133,7 @@
 
 			echo new JSObject('',JSObject::libraryLink('jquery', '2.2.3'));
             echo new JSObject('','bootstrap/dist/js/bootstrap.min.js');
+            echo new JSObject('','https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js');
             echo new JSObject('','scripts/scripts.js');
             echo new JSObject('','https://maps.googleapis.com/maps/api/js?key=AIzaSyBtPi4zADmslpF6tUoBb3iuspEmBDxDHI0&libraries=places');
 		?>
