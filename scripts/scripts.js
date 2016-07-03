@@ -62,6 +62,8 @@ function switchPane(icon){
 	var typeDiv = $('.'+section_name+'_'+pane_name);
 	if(typeDiv.hasClass('do_not_show')){
 		var panes = $('.' + section_name + '_option');
+		panes.stop(true, true);
+		typeDiv.stop(true, true);
 		panes.animate({
 			opacity:0
 		}, 500, function(){

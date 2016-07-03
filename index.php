@@ -56,9 +56,18 @@
 						]
 					],
 					'Hotels' => [
-						'Archontika Karamarlis' => (object)[],
-						'Park Hotel' => (object)[],
-						'Xenia Hotel' => (object)[]
+						'Archontika Karamarlis' => (object)[
+							'image' => 'hotels/archontika_karamarlis.jpg',
+							'website' => 'http://www.archontikakaramarlis.gr'
+						],
+						'Park Hotel' => (object)[
+							'image' => 'hotels/park_hotel.jpg',
+							'website' => 'http://amhotels.gr/parkhotel_en.html'
+						],
+						'Xenia Hotel' => (object)[
+							'image' => 'hotels/xenia_hotel.jpg',
+							'website' => 'http://www.domotel.gr/hotel/4/Xenia-Volos'
+						]
 					],
 					'Restaurants' => [
 						'Ouzeri Iolkos' => (object)[],
@@ -69,7 +78,38 @@
 						'Haagen Daas' => (object)[],
 						'Dwdorean Ice Cream' => (object)[]
 					],
-					'Beaches' => []
+					'Beaches' => [
+						'Agios Ioannis' => (object)[
+							'image' => 'beaches/agios_ioannis.jpg'
+						],
+						'Mylopotamos' => (object)[
+							'image' => 'beaches/mylopotamos.jpg'
+						],
+						'Papa Nero' => (object)[
+							'image' => 'beaches/papa_nero.jpg'
+						],
+						'Horefto' => (object)[
+							'image' => 'beaches/horefto.jpg'
+						],
+						'Fakistra' => (object)[
+							'image' => 'beaches/fakistra.jpg'
+						],
+						'Damouchari' => (object)[
+							'image' => 'beaches/damouchari.jpg'
+						],
+						'Mourtia' => (object)[
+							'image' => 'beaches/mourtia.jpg'
+						],
+						'Katigiorgis' => (object)[
+							'image' => 'beaches/katigiorgis.jpg'
+						],
+						'Platanias' => (object)[
+							'image' => 'beaches/platanias.jpg'
+						],
+						'Potistika' => (object)[
+							'image' => 'beaches/potistika.jpg'
+						],
+					]
 			];
 			foreach($arr as $group => $recommendation){
 				$classes = ['recommendations_option', 'recommendations_' . strtolower($group), 'row'];
