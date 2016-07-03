@@ -61,12 +61,12 @@
 				new UISection([
 						    new UIDiv([
                                 new UIDiv([
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-plane']),'#travel','switchTravel("plane");'),
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-ship']),'#travel','switchTravel("ship");'),
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-subway']),'#travel','switchTravel("train");'),
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-taxi']),'#travel','switchTravel("taxi");'),
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-bus']),'#travel','switchTravel("coach");'),
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-car']), '#travel', 'switchTravel("car");')
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-plane'], 'plane'),'#travel','switchPane(this);'),
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-ship'], 'ship'),'#travel','switchPane(this);'),
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-subway'], 'train'),'#travel','switchPane(this);'),
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-taxi'], 'taxi'),'#travel','switchPane(this);'),
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-bus'], 'coach'),'#travel','switchPane(this);'),
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-car'], 'car'), '#travel','switchPane(this);')
                                 ], 'icons'),
 							new UIDiv(
 									[
@@ -131,7 +131,47 @@
 						], 'container')
 				], 'travel'),
 				new UILink('','','','','recommendations'),
-				new UISection([], 'recommendations'),
+				new UISection([
+					new UIDiv([
+							new UIDiv([
+									new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-picture-o'], 'attractions'),'#recommendations','switchPane(this);'),
+									new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-bed'], 'hotels'),'#recommendations','switchPane(this);'),
+									new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-cutlery'], 'restaurants'),'#recommendations','switchPane(this);'),
+									new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-glass'], 'bars'),'#recommendations','switchPane(this);'),
+									new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-sun-o'], 'beaches'),'#recommendations','switchPane(this);')
+							], 'icons'),
+							new UIDiv(
+									[
+											new UIHeading(2, 'Attractions')
+									],
+									['recommendations_option', 'recommendations_attractions', 'row']
+							),
+							new UIDiv(
+									[
+											new UIHeading(2, 'Hotels')
+									],
+									['recommendations_option', 'recommendations_hotels', 'row', 'do_not_show']
+							),
+							new UIDiv(
+									[
+											new UIHeading(2, 'Restaurants')
+									],
+									['recommendations_option', 'recommendations_restaurants', 'row', 'do_not_show']
+							),
+							new UIDiv(
+									[
+											new UIHeading(2, 'Bars')
+									],
+									['recommendations_option', 'recommendations_bars', 'row', 'do_not_show']
+							),
+							new UIDiv(
+									[
+											new UIHeading(2, 'Beaches')
+									],
+									['recommendations_option', 'recommendations_beaches', 'row', 'do_not_show']
+							),
+					], 'container')
+				], 'recommendations'),
 				new UILink('','','','','rsvp'),
 				new UISection([
 					new UIDiv([

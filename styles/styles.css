@@ -68,6 +68,12 @@ h1{
 .recommendations{
 	background-color:white;
 }
+.recommendations a{
+	color:rgb(77,77,77);
+}
+.recommendations .icons span:hover{
+	color:rgb(140,140,140);
+}
 .icons{
 	margin:auto;
     margin-bottom:10px;

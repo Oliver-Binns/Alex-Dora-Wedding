@@ -53,14 +53,19 @@ $(function(){
     var autocomplete = new google.maps.places.Autocomplete(input);
 });
 
-function switchTravel(travelType){
-	var typeDiv = $('.travel_'+travelType);
+function switchPane(icon){
+	var section = icon.parentElement.parentElement.parentElement;
+	var section_name = section.classList[0];
+	var pane_name = icon.childNodes[0].id;
+
+	var typeDiv = $('.'+section_name+'_'+pane_name);
 	if(typeDiv.hasClass('do_not_show')){
-		$('.travel_option').animate({
+		var panes = $('.' + section_name + '_option');
+		panes.animate({
 			opacity:0
 		}, 500, function(){
-			$('.travel_option').addClass('do_not_show');
-			$('.travel_option').css('opacity', 1);
+			panes.addClass('do_not_show');
+			panes.css('opacity', 1);
 			typeDiv.css('opacity', 0);
 			typeDiv.removeClass('do_not_show');
 			typeDiv.animate({
