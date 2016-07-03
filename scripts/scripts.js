@@ -20,6 +20,7 @@ $(function(){
 			$('#background2').css('display', 'block');
 		}
 	});
+	setupSlick();
 });
 
 function addCurrencies(){
@@ -68,6 +69,7 @@ function switchPane(icon){
 			panes.css('opacity', 1);
 			typeDiv.css('opacity', 0);
 			typeDiv.removeClass('do_not_show');
+			$('.slick-slider').slick('setPosition');
 			typeDiv.animate({
 				opacity:1
 			}, 500);
@@ -113,4 +115,30 @@ function getCarHirePrices(){
 
 function getCurrencyDiv(cost){
 	return '<div data-price="'+cost+'" class="currency"></div>'
+}
+
+function setupSlick(){
+	$('.slick-slider').slick({
+		dots: false,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 720,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+		]
+	});
 }

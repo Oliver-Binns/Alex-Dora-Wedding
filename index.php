@@ -18,6 +18,8 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker.min.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css">
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="styles/styles.css?v=1.01">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +28,65 @@
 	</head>
 	<body>
 		<?php
+			// Set up recommendations section-
+			$recommendations_div = [
+					new UIDiv([
+							new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-picture-o'], 'attractions'),'#recommendations','switchPane(this);'),
+							new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-bed'], 'hotels'),'#recommendations','switchPane(this);'),
+							new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-cutlery'], 'restaurants'),'#recommendations','switchPane(this);'),
+							new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-glass'], 'bars'),'#recommendations','switchPane(this);'),
+							new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-sun-o'], 'beaches'),'#recommendations','switchPane(this);')
+					], 'icons')
+			];
+
+			$arr = [
+					'Attractions' => [
+						'Pelion Train' => (object)[],
+						'Outdoor Cinema' => (object)[],
+						'Archaelogical Museum' => (object)[],
+						'Meteora' => (object)[],
+						'Kottes and' => (object)[]
+					],
+					'Hotels' => [
+						'Archontika Karamarlis' => (object)[],
+						'Park Hotel' => (object)[],
+						'Xenia Hotel' => (object)[]
+					],
+					'Restaurants' => [
+						'Ouzeri Iolkos' => (object)[]
+					],
+					'Bars' => [
+						'Elli’s Caf&eacute;' => (object)[],
+						'Haagen Daas' => (object)[],
+						'Dwdorean Ice Cream' => (object)[]
+					],
+					'Beaches' => []
+			];
+			foreach($arr as $group => $recommendation){
+				$classes = ['recommendations_option', 'recommendations_' . strtolower($group), 'row'];
+				if($group !== 'Attractions'){
+					array_push($classes, 'do_not_show');
+				}
+
+				$slider = new UIDiv([], 'slick-slider');
+				foreach($recommendation as $name => $data){
+					$div = new UIDiv([
+						new UIHeading(3, $name)
+					]);
+					$slider->addContent($div);
+				}
+
+				$div = new UIDiv(
+						[
+								new UIHeading(2, $group),
+								$slider
+						],
+						$classes
+				);
+				array_push($recommendations_div, $div);
+			}
+
+
 			echo new UINav('', [
 				new UILink('Home', '#home'),
 				new UILink('Our Story', '#our-story'),
@@ -132,45 +193,7 @@
 				], 'travel'),
 				new UILink('','','','','recommendations'),
 				new UISection([
-					new UIDiv([
-							new UIDiv([
-									new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-picture-o'], 'attractions'),'#recommendations','switchPane(this);'),
-									new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-bed'], 'hotels'),'#recommendations','switchPane(this);'),
-									new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-cutlery'], 'restaurants'),'#recommendations','switchPane(this);'),
-									new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-glass'], 'bars'),'#recommendations','switchPane(this);'),
-									new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-sun-o'], 'beaches'),'#recommendations','switchPane(this);')
-							], 'icons'),
-							new UIDiv(
-									[
-											new UIHeading(2, 'Attractions')
-									],
-									['recommendations_option', 'recommendations_attractions', 'row']
-							),
-							new UIDiv(
-									[
-											new UIHeading(2, 'Hotels')
-									],
-									['recommendations_option', 'recommendations_hotels', 'row', 'do_not_show']
-							),
-							new UIDiv(
-									[
-											new UIHeading(2, 'Restaurants')
-									],
-									['recommendations_option', 'recommendations_restaurants', 'row', 'do_not_show']
-							),
-							new UIDiv(
-									[
-											new UIHeading(2, 'Bars')
-									],
-									['recommendations_option', 'recommendations_bars', 'row', 'do_not_show']
-							),
-							new UIDiv(
-									[
-											new UIHeading(2, 'Beaches')
-									],
-									['recommendations_option', 'recommendations_beaches', 'row', 'do_not_show']
-							),
-					], 'container')
+					new UIDiv($recommendations_div, 'container')
 				], 'recommendations'),
 				new UILink('','','','','rsvp'),
 				new UISection([
@@ -189,6 +212,7 @@
 			echo new JSObject('',JSObject::libraryLink('jquery', '2.2.3'));
             echo new JSObject('','bootstrap/dist/js/bootstrap.min.js');
             echo new JSObject('','https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js');
+            echo new JSObject('','//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js');
             echo new JSObject('','scripts/scripts.js');
             echo new JSObject('','https://maps.googleapis.com/maps/api/js?key=AIzaSyBtPi4zADmslpF6tUoBb3iuspEmBDxDHI0&libraries=places');
 		?>
