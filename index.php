@@ -43,71 +43,102 @@
 			$arr = [
 					'Attractions' => [
 						'Pelion Train' => (object)[
-							'image' => 'attractions/pellion_train.jpg'
+							'image' => 'attractions/pellion_train.jpg',
+							'website' => 'http://www.trainose.gr/en/tourism-culture/train-and-recreation/the-pelion-train/'
 						],
 						'Open Air Cinema' => (object)[
-							'image' => 'attractions/open_air.jpg'
+							'image' => 'attractions/open_air.jpg',
+							'website' => 'http://exoraistiki.gr/',
+							'location' => 'https://goo.gl/maps/CRHcZ9FGSoH2'
 						],
 						'Archaelogical Museum' => (object)[
-							'image' => 'attractions/archaeology.jpg'
+							'image' => 'attractions/archaeology.jpg',
+							'website' => 'http://odysseus.culture.gr/h/1/eh151.jsp?obj_id=3271',
+							'location' => 'https://goo.gl/maps/2AvnuCqs8wH2'
 						],
 						'Meteora' => (object)[
-							'image' => 'attractions/meteora.jpg'
+							'image' => 'attractions/meteora.jpg',
+							'website' => 'https://www.visitmeteora.travel/',
+							'location' => 'https://goo.gl/maps/wmsowztHhc32'
 						]
 					],
 					'Hotels' => [
 						'Archontika Karamarlis' => (object)[
 							'image' => 'hotels/archontika_karamarlis.jpg',
-							'website' => 'http://www.archontikakaramarlis.gr'
+							'website' => 'http://www.archontikakaramarlis.gr',
+							'location' => 'https://goo.gl/maps/xiqKJbFJqvM2'
 						],
 						'Park Hotel' => (object)[
 							'image' => 'hotels/park_hotel.jpg',
-							'website' => 'http://amhotels.gr/parkhotel_en.html'
+							'website' => 'http://amhotels.gr/parkhotel_en.html',
+							'location' => 'https://goo.gl/maps/x7G7z5qAqXQ2'
 						],
 						'Xenia Hotel' => (object)[
 							'image' => 'hotels/xenia_hotel.jpg',
-							'website' => 'http://www.domotel.gr/hotel/4/Xenia-Volos'
+							'website' => 'http://www.domotel.gr/hotel/4/Xenia-Volos',
+							'location' => 'https://goo.gl/maps/ZimNLNVHHSQ2'
 						]
 					],
 					'Restaurants' => [
-						'Ouzeri Iolkos' => (object)[],
+						'Ouzeri Iolkos' => (object)[
+							'image' => 'restaurants/ouzeri_iolkos.jpg'
+						],
 						'Kottes' => (object)[]
 					],
 					'Bars' => [
-						'Elli’s Caf&eacute;' => (object)[],
-						'Haagen Daas' => (object)[],
-						'Dwdorean Ice Cream' => (object)[]
+						'E&Lambda;&Lambda;H’s Chocolaterie' => (object)[
+							'image' => 'bars/chocolaterie.jpg',
+							'website' => 'https://www.facebook.com/%CE%95%CE%9B%CE%9B%CE%97s-Chocolaterie-Viennoise-335577223300599/'
+						],
+						'H&auml;agen Dazs' => (object)[
+							'image' => 'bars/haagen_dazs.jpg',
+							'website' => 'https://www.facebook.com/Haagen-Dazs-Volou-404229046427443',
+							'location' => 'https://goo.gl/maps/wLR8UU2utit'
+						],
+						'Dwdorean Ice Cream' => (object)[
+
+						]
 					],
 					'Beaches' => [
 						'Agios Ioannis' => (object)[
-							'image' => 'beaches/agios_ioannis.jpg'
+							'image' => 'beaches/agios_ioannis.jpg',
+							'location' => 'https://goo.gl/maps/a7jtjWu6gHT2'
 						],
 						'Mylopotamos' => (object)[
-							'image' => 'beaches/mylopotamos.jpg'
+							'image' => 'beaches/mylopotamos.jpg',
+							'location' => 'https://goo.gl/maps/YWJPewr9Dtt'
 						],
 						'Papa Nero' => (object)[
-							'image' => 'beaches/papa_nero.jpg'
+							'image' => 'beaches/papa_nero.jpg',
+							'location' => 'https://goo.gl/maps/MQ5HBaRqHJN2'
 						],
 						'Horefto' => (object)[
-							'image' => 'beaches/horefto.jpg'
+							'image' => 'beaches/horefto.jpg',
+							'location' => 'https://goo.gl/maps/SW5RznsSzTL2'
 						],
 						'Fakistra' => (object)[
-							'image' => 'beaches/fakistra.jpg'
+							'image' => 'beaches/fakistra.jpg',
+							'location' => ''
 						],
 						'Damouchari' => (object)[
-							'image' => 'beaches/damouchari.jpg'
+							'image' => 'beaches/damouchari.jpg',
+							'location' => 'https://goo.gl/maps/wkME28RmAh12'
 						],
 						'Mourtia' => (object)[
-							'image' => 'beaches/mourtia.jpg'
+							'image' => 'beaches/mourtia.jpg',
+							'location' => 'https://goo.gl/maps/NhHZmvTQ7pN2'
 						],
 						'Katigiorgis' => (object)[
-							'image' => 'beaches/katigiorgis.jpg'
+							'image' => 'beaches/katigiorgis.jpg',
+							'location' => 'https://goo.gl/maps/pudTgdJiPin'
 						],
 						'Platanias' => (object)[
-							'image' => 'beaches/platanias.jpg'
+							'image' => 'beaches/platanias.jpg',
+							'location' => 'https://goo.gl/maps/219NuMJzKF72'
 						],
 						'Potistika' => (object)[
-							'image' => 'beaches/potistika.jpg'
+							'image' => 'beaches/potistika.jpg',
+							'location' => 'https://goo.gl/maps/BdYWX6UnBKy'
 						],
 					]
 			];
@@ -123,6 +154,16 @@
 						new UIImage(isset($data->image)?'img/recommendations/'.$data->image:''),
 						new UIHeading(3, $name)
 					], 'recommendation');
+
+					$locations_links = new UIDiv([], 'locations-links');
+					if(isset($data->website)){
+						$locations_links->addContent(new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-mouse-pointer', 'website-link']), $data->website, '', '_blank'));
+					}
+					if(isset($data->location)){
+						$locations_links->addContent(new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-map-marker', 'maps-link']), $data->location, '', '_blank'));
+					}
+					$div->addContent($locations_links);
+
 					$slider->addContent(new UIDiv([$div]));
 				}
 
@@ -167,7 +208,20 @@
 					], 'container')
 				], 'our-story'),
 				new UILink('','','','','the-day'),
-				new UISection([], 'the-day'),
+				new UISection([
+					new UIDiv([
+						new UIHeading(1, 'The Big Day'),
+						new UIHeading(2, 'The Wedding'),
+						new UIHeading(4, 'Ceremony'),
+						new UIHeading(4, 'Photos'),
+						new UIHeading(2, 'Reception'),
+						new UIHeading(4, 'Welcome Drinks'),
+						new UIHeading(4, 'Speeches'),
+						new UIHeading(4, 'First Dance'),
+						new UIHeading(4, 'Cake'),
+						new UIHeading(4, 'Disco')
+					], 'container')
+				], 'the-day'),
 				new UILink('','','','','travel'),
 				new UISection([
 						    new UIDiv([

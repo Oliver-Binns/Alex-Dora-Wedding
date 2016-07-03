@@ -111,6 +111,14 @@ h1{
 .icons span:hover{
 	color:rgba(255,255,255,0.5);
 }
+.locations-links{
+	width:100%;
+	display:inline-block;
+	padding:10px;
+}
+.locations-links span{
+	margin:10px;
+}
 .currency{
 	display:inline-block;
 }
