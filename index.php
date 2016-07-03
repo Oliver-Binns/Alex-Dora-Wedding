@@ -2,6 +2,7 @@
 	include 'phpUI/autoloader.php';
 	use phpHTML\UICore\UIDiv;
 	use phpHTML\UICore\UIHeading;
+	use phpHTML\UICore\UIImage;
 	use phpHTML\UICore\UIInput\UIDatePicker;
 	use phpHTML\UICore\UIInput\UIDropdown;
 	use phpHTML\UICore\UIInput\UITextBox;
@@ -41,11 +42,18 @@
 
 			$arr = [
 					'Attractions' => [
-						'Pelion Train' => (object)[],
-						'Outdoor Cinema' => (object)[],
-						'Archaelogical Museum' => (object)[],
-						'Meteora' => (object)[],
-						'Kottes and' => (object)[]
+						'Pelion Train' => (object)[
+							'image' => 'attractions/pellion_train.jpg'
+						],
+						'Open Air Cinema' => (object)[
+							'image' => 'attractions/open_air.jpg'
+						],
+						'Archaelogical Museum' => (object)[
+							'image' => 'attractions/archaeology.jpg'
+						],
+						'Meteora' => (object)[
+							'image' => 'attractions/meteora.jpg'
+						]
 					],
 					'Hotels' => [
 						'Archontika Karamarlis' => (object)[],
@@ -53,7 +61,8 @@
 						'Xenia Hotel' => (object)[]
 					],
 					'Restaurants' => [
-						'Ouzeri Iolkos' => (object)[]
+						'Ouzeri Iolkos' => (object)[],
+						'Kottes' => (object)[]
 					],
 					'Bars' => [
 						'Elli’s Caf&eacute;' => (object)[],
@@ -71,9 +80,10 @@
 				$slider = new UIDiv([], 'slick-slider');
 				foreach($recommendation as $name => $data){
 					$div = new UIDiv([
+						new UIImage(isset($data->image)?'img/recommendations/'.$data->image:''),
 						new UIHeading(3, $name)
-					]);
-					$slider->addContent($div);
+					], 'recommendation');
+					$slider->addContent(new UIDiv([$div]));
 				}
 
 				$div = new UIDiv(

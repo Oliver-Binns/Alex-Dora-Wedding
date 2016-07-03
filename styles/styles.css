@@ -65,6 +65,16 @@ h1{
     color:white;
 	background-color:rgb(77,77,77);
 }
+.slick-slider{
+	margin-left:30px;
+	margin-right:30px;
+}
+.slick-slide{
+	height:auto;
+}
+.slick-prev:before, .slick-next:before{
+	color:grey;
+}
 .recommendations{
 	background-color:white;
 }
@@ -73,6 +83,17 @@ h1{
 }
 .recommendations .icons span:hover{
 	color:rgb(140,140,140);
+}
+.recommendation{
+	background-color:rgba(255,255,255,0.8);
+	margin:20px;
+	padding:10px;
+	border-radius:10px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	text-align:center;
+}
+.recommendation img{
+	width:100%;
 }
 .icons{
 	margin:auto;
