@@ -31,7 +31,8 @@
 				new UILink('Our Story', '#our-story'),
 				new UILink('The Wedding Day', '#the-day'),
 				new UILink('Travel','#travel'),
-				new UILink('Recommendations', '#recommendations')
+				new UILink('Recommendations', '#recommendations'),
+				new UILink('RSVP', '#rsvp')
 			], [], [], UINav::FIXED_TOP);
 
 			echo new UISection(
@@ -39,8 +40,10 @@
 							new UIHeading(1, 'Alex & Dora'),
 							new UIHeading(4, '27<sup>th</sup> July 2017')
 					],
-					'background'
+					'background',
+					'background1'
 			);
+			echo new UISection([], 'background', 'background2');
 
 			echo new UIDiv([
 				new UILink('','','','','home'),
@@ -58,12 +61,12 @@
 				new UISection([
 						    new UIDiv([
                                 new UIDiv([
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-plane']),'','switchTravel("plane");'),
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-ship']),'','switchTravel("ship");'),
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-subway']),'','switchTravel("train");'),
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-taxi']),'','switchTravel("taxi");'),
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-bus']),'','switchTravel("coach");'),
-		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-car']), '', 'switchTravel("car");')
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-plane']),'#travel','switchTravel("plane");'),
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-ship']),'#travel','switchTravel("ship");'),
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-subway']),'#travel','switchTravel("train");'),
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-taxi']),'#travel','switchTravel("taxi");'),
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-bus']),'#travel','switchTravel("coach");'),
+		                                new UILink(new UISpan([], ['glyphicon', 'fa', 'fa-car']), '#travel', 'switchTravel("car");')
                                 ], 'icons'),
 							new UIDiv(
 									[
@@ -113,7 +116,7 @@
                                 new UIDiv([
 	                                new UIHeading(3, 'Hire a Car'),
 	                                new UIDiv(new UIDropdown([[], ['value' => 'ATH', 'text' => 'Athens Airport'], ['value' => 'SKG', 'text' => 'Thessaloniki Airport'], ['value' => 'VOL', 'text' => 'Volos Airport']], '', 'airportToHire', 'getCarHirePrices()'), 'col-xs-4'),
-	                                new UIDiv(new UITextBox('22-06-2017', 'arrivalForHire', 'Select Arrival Date'), ['col-xs-4','date-input']),
+	                                new UIDiv(new UITextBox('22-06-2017', 'arrivalForHire', 'Select xArrival Date'), ['col-xs-4','date-input']),
 	                                new UIDiv(new UITextBox('29-06-2017', 'departureForHire', 'Select Departure Date'), ['col-xs-4','date-input']),
 	                                new UIDiv([], 'car-hire-results')
                                 ], 'row'),
@@ -128,7 +131,19 @@
 						], 'container')
 				], 'travel'),
 				new UILink('','','','','recommendations'),
-				new UISection([], 'recommendations')
+				new UISection([], 'recommendations'),
+				new UILink('','','','','rsvp'),
+				new UISection([
+					new UIDiv([
+						new UIDiv(new UIDiv([new UIHeading(1, 'RSVP Now')], 'col-xs-12'), 'row'),
+						new UIDiv(
+						[
+							new UIDiv([new UITextBox('', 'Name', 'Your Name')], 'col-xs-6'),
+							new UIDiv([new UITextBox()], 'col-xs-6')
+						],
+							'row')
+					], 'container')
+				], 'rsvp')
 			], 'body-sections');
 
 			echo new JSObject('',JSObject::libraryLink('jquery', '2.2.3'));

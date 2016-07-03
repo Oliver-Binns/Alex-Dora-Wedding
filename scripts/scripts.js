@@ -12,6 +12,14 @@ $(function(){
 		currency = data.rates;
 		addCurrencies();
 	});
+
+	$(window).scroll(function() {
+		if(window.pageYOffset < window.innerHeight){
+			$('#background2').css('display', 'none');
+		}else{
+			$('#background2').css('display', 'block');
+		}
+	});
 });
 
 function addCurrencies(){
