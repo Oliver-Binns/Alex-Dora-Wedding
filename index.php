@@ -44,7 +44,18 @@
 					'Attractions' => [
 						'Pelion Train' => (object)[
 							'image' => 'attractions/pellion_train.jpg',
-							'website' => 'http://www.trainose.gr/en/tourism-culture/train-and-recreation/the-pelion-train/'
+							'website' => 'http://www.trainose.gr/en/tourism-culture/train-and-recreation/the-pelion-train/',
+							'location' => 'https://goo.gl/maps/891ZQx59BdK2'
+						],
+						'Agios Nikolaos Cathedral' => (object)[
+							'image' => 'attractions/cathedral.jpg',
+							'website' => 'http://www.ag-nikolaos.itgo.com/',
+							'location' => 'https://goo.gl/maps/VmGJbGbQVi52'
+						],
+						'Brickworks Museum' => (object)[
+							'image' => 'attractions/rooftile-museum.jpg',
+							'website' => 'http://www.piop.gr/en/diktuo-mouseiwn/Mouseio-Plinthokeramopoieias-Tsalapata/to-mouseio.aspx',
+							'location' => 'https://goo.gl/maps/iBsPqppo2Pw'
 						],
 						'Open Air Cinema' => (object)[
 							'image' => 'attractions/open_air.jpg',
@@ -55,6 +66,16 @@
 							'image' => 'attractions/archaeology.jpg',
 							'website' => 'http://odysseus.culture.gr/h/1/eh151.jsp?obj_id=3271',
 							'location' => 'https://goo.gl/maps/2AvnuCqs8wH2'
+						],
+						'Pelion Gastronomy' => (object)[
+							'image' => 'attractions/gastronomy.jpg',
+							'website' => 'http://www.peliongastronomy.gr/',
+							'location' => 'https://goo.gl/maps/9JbETHxwF5U2'
+						],
+						'Pelion Mountain' => (object)[
+							'image' => 'attractions/mountain.jpg',
+							'website' => 'http://www.discoverpelio.com/',
+							'location' => 'https://goo.gl/maps/wAtaeK6mwx92',
 						],
 						'Meteora' => (object)[
 							'image' => 'attractions/meteora.jpg',
@@ -73,20 +94,72 @@
 							'website' => 'http://amhotels.gr/parkhotel_en.html',
 							'location' => 'https://goo.gl/maps/x7G7z5qAqXQ2'
 						],
-						'Xenia Hotel' => (object)[
+						'Six Keys' => (object)[
+							'image' => 'hotels/6keys.jpg',
+							'website' => 'http://www.sixkeys.gr',
+							'location' => 'https://goo.gl/maps/jR6jWuDoSSR2'
+						],
+						'Xenia Palace' => (object)[
 							'image' => 'hotels/xenia_hotel.jpg',
 							'website' => 'http://www.domotel.gr/hotel/4/Xenia-Volos',
 							'location' => 'https://goo.gl/maps/ZimNLNVHHSQ2'
+						],
+						'Melanthi Mansion' => (object)[
+							'website' => 'http://www.melanthi.gr',
+							'location' => 'https://goo.gl/maps/kNpzepr5C432',
+							'image' => 'hotels/melanthi.jpg'
+						],
+						'Valeni Boutique Hotel' => (object)[
+							'website' => 'http://www.valeni.gr',
+							'location' => 'https://goo.gl/maps/ceyTCm5nUGr',
+							'image' => 'hotels/valeni.jpg'
+						],
+						'Portaria Hotel' => (object)[
+							'website' => 'http://www.portariahotel.gr',
+							'image' => 'hotels/portaria.jpg',
+							'location' => 'https://goo.gl/maps/H6xxtEPdRBs'
+						],
+						'Kritsa Hotel' => (object)[
+							'website' => 'http://www.hotel-kritsa.gr',
+							'location' => 'https://goo.gl/maps/9JbETHxwF5U2',
+							'image' => 'hotels/kritsa.jpg'
 						]
 					],
 					'Restaurants' => [
-						'Ouzeri Iolkos' => (object)[
-							'image' => 'restaurants/ouzeri_iolkos.jpg'
+						'Tsipouradiko Iolkos' => (object)[
+							'image' => 'restaurants/ouzeri_iolkos.jpg',
+							'website' => 'http://ouzeri-iolkos.gr/iolkos/',
+							'location' => 'https://goo.gl/maps/bTZwJd23hVx'
 						],
-						'Kottes' => (object)[]
+						'Six Keys' => (object)[
+							'image' => 'bars/6keys.jpg',
+							'website' => 'http://www.sixkeys.gr',
+							'location' => 'https://goo.gl/maps/jR6jWuDoSSR2'
+						],
+						'Plagios' => (object)[
+							'image' => 'restaurants/plagios.jpg',
+							'website' => 'https://www.facebook.com/pages/Plagios/188661704504240',
+							'location' => 'https://goo.gl/maps/zszgxbJTgfN2'
+						],
+						'Tsipouradiko Papadis' => (object)[
+							'image' => 'restaurants/papadis.jpg',
+							'website' => 'http://www.papadis.gr',
+							'location' => 'https://goo.gl/maps/Vm3ZkkZGjzR2'
+						],
+						'Ortansies' => (object)[
+							'image' => 'restaurants/ortansies.jpg',
+							'location' => 'https://goo.gl/maps/QEe4dtdFCFD2',
+							'website' => 'http://www.ortansies.com/'
+						],
+						'Kritsa Gastronomy' => (object)[
+							'website' => 'http://www.peliongastronomy.gr/',
+							'image' => 'restaurants/kritsa.jpg',
+							'location' => 'https://goo.gl/maps/9JbETHxwF5U2'
+						]
+						//'Bokos' => (object)[]
 					],
 					'Bars' => [
-						'E&Lambda;&Lambda;H’s Chocolaterie' => (object)[
+						'Elli’s Chocolaterie' => (object)[
 							'image' => 'bars/chocolaterie.jpg',
 							'website' => 'https://www.facebook.com/%CE%95%CE%9B%CE%9B%CE%97s-Chocolaterie-Viennoise-335577223300599/'
 						],
@@ -95,16 +168,34 @@
 							'website' => 'https://www.facebook.com/Haagen-Dazs-Volou-404229046427443',
 							'location' => 'https://goo.gl/maps/wLR8UU2utit'
 						],
-						'Dwdorean Ice Cream' => (object)[
-
+						'Dodoni Ice Cream' => (object)[
+							'image' => 'bars/dodoni.jpg',
+							'website' => 'http://www.dodoni.com.gr/index.php/en/',
+							'location' => 'https://goo.gl/maps/MYS88wVuzQ42'
+						],
+						'Six Keys' => (object)[
+							'image' => 'bars/6keys.jpg',
+							'website' => 'http://www.sixkeys.gr',
+							'location' => 'https://goo.gl/maps/jR6jWuDoSSR2'
+						],
+						'Amaryllis Cafe' => (object)[
+							'image' => 'bars/amaryllis.jpg',
+							'location' => 'https://goo.gl/maps/FhN7SD7G1yq',
+							'website' => 'https://www.facebook.com/pages/Amaryllis-Cafe-Bistrot/217681478428163'
+						],
+						'Park Hotel Roof Bar' => (object)[
+							'image' => 'bars/roofbar.jpg',
+							'website' => 'http://amhotels.gr/parkhotel_en.html',
+							'location' => 'https://goo.gl/maps/x7G7z5qAqXQ2'
 						]
+						//'Rivera Bar' => (object)[]
 					],
 					'Beaches' => [
 						'Agios Ioannis' => (object)[
 							'image' => 'beaches/agios_ioannis.jpg',
 							'location' => 'https://goo.gl/maps/a7jtjWu6gHT2'
 						],
-						'Mylopotamos' => (object)[
+						'Milopotamos' => (object)[
 							'image' => 'beaches/mylopotamos.jpg',
 							'location' => 'https://goo.gl/maps/YWJPewr9Dtt'
 						],
@@ -124,7 +215,7 @@
 							'image' => 'beaches/damouchari.jpg',
 							'location' => 'https://goo.gl/maps/wkME28RmAh12'
 						],
-						'Mourtia' => (object)[
+						'Mourtias' => (object)[
 							'image' => 'beaches/mourtia.jpg',
 							'location' => 'https://goo.gl/maps/NhHZmvTQ7pN2'
 						],
@@ -190,7 +281,7 @@
 			echo new UISection(
 					[
 							new UIHeading(1, 'Alex & Dora'),
-							new UIHeading(4, '27<sup>th</sup> July 2017')
+							new UIHeading(4, '27<sup>th</sup> July 2017 - 7pm')
 					],
 					'background',
 					'background1'
@@ -204,7 +295,7 @@
 				new UISection([
 					new UIDiv([
 						new UIHeading(1, 'Our Story'),
-						new UIParagraph('It all started back in the summer of 2012 when we were on tour with the European Union Youth Orchestra, which draws some of the best young musicians from across the EU. We both became friends, and of course, our friendship became official on Facebook a few days later.<br><br>The following summer, Dora was about to tour with the orchestra again, but she stopped off in London to find accommodation for her postgraduate studies which she was about to start that September. Still as friends, and rather unromantically, we met for a coffee at Victoria Station and it was from then on that a long string of very long messages and phone calls between us started. Later that summer Alex decided to visit Amsterdam for Dora&rsquo;s final stop on the orchestral tour. We had been in Amsterdam on tour the previous year buy Alex hadn&rsquo;t had chance to explore properly so it seemed like the perfect excuse for him to go back! We met for a romantic dinner in the heart of Amsterdam and it was from then on that our relationship blossomed. The following week Dora moved to London and we&rsquo;ve both been inseperable ever since.<br><br>Fast forward to August 2015- it was a beautiful summer evening in Makrinitsa on the Pelion Mountain in Greece, and Dora and Alex were celebrating two years together surrounded by Dora&rsquo;s close family and a few friends, when all of a sudden Alex proposed and without hesitation Dora said &lsquo;YES&rsquo;! We are very excited for the wedding and we hope you can join us to celebrate this special occasion.')
+						new UIParagraph('Dora and Alexander first met in the beautiful northern Italian Alps whilst on tour with the European Union Youth Orchestra in the summer of 2012. They quickly became friends but as Dora was studying at the Oberlin College Conservatory in America and Alexander was studying at the Royal Academy in London they didn’t meet again until the following summer.<br><br>In the summer of 2013, Dora again touring with the orchestra in Europe and on her way, stopped off in London to organise accommodation for the September as she was starting her postgraduate studies at the Guildhall in London.  On a beautiful summer’s day,  Alexander and Dora met for coffee and spent the day talking and getting to know each other better.<br><br>Later that summer Alex decided to surprise Dora and travelled to Amsterdam where the orchestra had its final concert of the tour.  They met for a romantic dinner in the heart of the city and during a moonlit walk along the canals they became a couple.<br><br>In August 2015, on a beautiful summer evening in Makrinitsa on the Pelion Mountain in Greece, surrounded by Dora’s family and a few of their friends, Alex proposed marriage and without hesitation Dora said yes.<br><br>Dora and Alexander have been together over three years now, their love for each other grows daily and they are really looking forward to celebrating their wedding with you in the same little village of Makrinitsa where they became engaged.')
 					], 'container')
 				], 'our-story'),
 				new UILink('','','','','the-day'),
@@ -216,10 +307,12 @@
 						new UIHeading(4, 'Photos'),
 						new UIHeading(2, 'Reception'),
 						new UIHeading(4, 'Welcome Drinks'),
+						new UIHeading(4, 'Dinner'),
 						new UIHeading(4, 'Speeches'),
+						new UIHeading(4, 'Cutting of the Cake'),
 						new UIHeading(4, 'First Dance'),
-						new UIHeading(4, 'Cake'),
-						new UIHeading(4, 'Disco')
+						new UIHeading(4, 'Party'),
+						new UIHeading(4, 'Carriages')
 					], 'container')
 				], 'the-day'),
 				new UILink('','','','','travel'),
@@ -295,6 +388,44 @@
                             ], ['travel_option', 'travel_car', 'row', 'do_not_show']),
 						], 'container')
 				], 'travel'),
+				/*new UISection([
+					new UIDiv([
+						new UIHeading(1, 'Travel Planner'),
+						new UIDiv([
+							new UIDiv([
+								(new UITextBox('', '', 'Enter a location..', '', false, 'form-control', 'car-input'))->withLabel('Travelling From')
+							], 'col-xs-12'),
+						], 'row'),
+						new UIDiv([
+								new UIDiv([
+										(new UITextBox('22-06-2017', '', 'Arrival', '', false, ['form-control','date-input']))->withLabel('Date of Arrival')
+								], 'col-xs-4'),
+								new UIDiv([
+										(new UITextBox('29-06-2017', '', 'Departure', '', false, ['form-control','date-input']))->withLabel('Date of Departure')
+								], ['col-xs-4']),
+								new UIDiv([
+										(new UIDropdown([
+												['text' => 'No'],
+												['text' => 'Yes']
+										], 'No'))->withLabel('Car Hire Needed')
+								], 'col-xs-4')
+						], 'row'),
+						new UIDiv([
+							new UIDiv([
+									(new UITextBox('1', '', 'No. Adults'))->withLabel('Number of Adults')
+							], 'col-xs-4'),
+							new UIDiv([
+									(new UITextBox('0', '', 'No. Children'))->withLabel('Number of Children')
+							], 'col-xs-4'),
+							new UIDiv([
+									/*(new UIDropdown([
+											['text' => 'No'],
+											['text' => 'Yes']
+									], 'No'))->withLabel('Car Hire Needed')
+							], 'col-xs-4')
+						], 'row')
+					],'container')
+				], 'travel'),*/
 				new UILink('','','','','recommendations'),
 				new UISection([
 					new UIDiv($recommendations_div, 'container')
@@ -302,7 +433,7 @@
 				new UILink('','','','','rsvp'),
 				new UISection([
 					new UIDiv([
-						new UIDiv(new UIDiv([new UIHeading(1, 'RSVP Now')], 'col-xs-12'), 'row'),
+						new UIDiv(new UIDiv([new UIHeading(1, 'RSVP')], 'col-xs-12'), 'row'),
 						new UIDiv(
 						[
 							new UIDiv([new UITextBox('', 'Name', 'Your Name')], 'col-xs-6'),

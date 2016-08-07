@@ -1,3 +1,8 @@
+@font-face{
+	font-family: 'Stylish Calligraphy';
+	src: url('../fonts/Stylish-Calligraphy.ttf');
+}
+
 body{
     text-align:center;
 }
@@ -43,10 +48,10 @@ section{
 	padding-bottom:10px;
 }
 h1{
-    font-family: 'Pacifico', cursive;
-    color:rgba(2,122,77,1);
+    font-family: 'Stylish Calligraphy', cursive;
+    color:#46aa03;
     margin-bottom:45px;
-    font-size:55px;
+    font-size:80px;
 }
 .section0{
 	width:100%;
@@ -64,6 +69,10 @@ h1{
 .travel{
     color:white;
 	background-color:rgb(77,77,77);
+}
+.travel label.small{
+	margin-top:10px;
+	font-weight:normal;
 }
 .slick-slider{
 	margin-left:30px;

@@ -49,9 +49,28 @@ $(function() {
 
 //Set up Maps-
 $(function(){
-    var input = /** @type {!HTMLInputElement} */(
-        document.getElementById('car-input'));
+    var input = /** @type {!HTMLInputElement} */(document.getElementById('car-input'));
     var autocomplete = new google.maps.places.Autocomplete(input);
+
+	autocomplete.addListener('place_changed', function() {
+		var place = autocomplete.getPlace();
+
+		var components = place.address_components;
+		var country = '';
+		components.forEach(function(item, index){
+			if(item.types.indexOf('country') != -1){
+				country = item.short_name;
+			}
+		});
+
+		var location = place.geometry.location;
+		$.ajax({
+			url: '../amadeus/makeCall.php?latitude=' + location.lat() + '&longitude' + location.lng() + '&country=' + country
+		}).done(function(data){
+			console.log(data);
+			//todo- do something relevant with data
+		});
+	});
 });
 
 function switchPane(icon){
