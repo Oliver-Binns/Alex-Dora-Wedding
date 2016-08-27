@@ -166,10 +166,24 @@ function setupSlick(){
 }
 
 function startCountdown(){
-	var date = new Date('2017-07-27'); //TODO add timezone :)
-	console.log(date);
-	var text = 'Only ';
-	//Calculate the number of days..
-	text += 'until the big day!';
-	$('.countdown div').html(text);
+	var wedding_date = new Date('Thu Jul 27 2017 19:00:00 GMT+0300 (EEST)'); //TODO add timezone :)
+
+	var updateTimer = function(){
+		var now = new Date();
+		var t = wedding_date - now;
+		var seconds = Math.floor((t/1000) % 60);
+		var minutes = Math.floor((t/1000/60) % 60 );
+		var hours = Math.floor( (t/(1000*60*60)) % 24 );
+		var days = Math.floor( t/(1000*60*60*24) );
+
+		var text = 'Only ';
+		//Calculate the number of days..
+		text += days;
+		text += ' days until the big day!';
+		$('.countdown div').html(text);
+	};
+
+	setInterval(updateTimer, 1000);
+	updateTimer();
+
 }
