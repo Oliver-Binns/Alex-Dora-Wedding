@@ -2,3 +2,4 @@ bootstrap/
 phpUI/
 .idea/
 config.php
+local-*.php

@@ -21,6 +21,7 @@ $(function(){
 		}
 	});
 	setupSlick();
+	startCountdown();
 });
 
 function addCurrencies(){
@@ -162,4 +163,13 @@ function setupSlick(){
 			}
 		]
 	});
+}
+
+function startCountdown(){
+	var date = new Date('2017-07-27'); //TODO add timezone :)
+	console.log(date);
+	var text = 'Only ';
+	//Calculate the number of days..
+	text += 'until the big day!';
+	$('.countdown div').html(text);
 }

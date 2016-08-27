@@ -16,12 +16,7 @@
 ?>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker.min.css">
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css">
-        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<?php require_once 'styles.php' ?>
 		<link rel="stylesheet" type="text/css" href="styles/styles.css?v=1.01">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="noindex">
@@ -278,19 +273,30 @@
 				new UILink('RSVP', '#rsvp')
 			], [], [], UINav::FIXED_TOP);
 
-			echo new UISection(
-					[
-							new UIHeading(1, 'Alex & Dora'),
-							new UIHeading(4, '27<sup>th</sup> July 2017 - 7pm')
-					],
-					'background',
-					'background1'
-			);
+			//echo
 			echo new UISection([], 'background', 'background2');
 
 			echo new UIDiv([
 				new UILink('','','','','home'),
-				new UISection([], 'section0'),
+					new UISection(
+						[
+								new UIDiv([
+										new UIDiv([
+												new UIDiv([
+														new UIDiv([new UIDiv()], ['height2', 'width2', 'image0', 'image']),
+														new UIDiv([new UIDiv()], ['height2', 'width2', 'image1', 'image']),
+														new UIDiv([new UIDiv()], ['height3', 'width1', 'countdown', 'image']),
+														new UIDiv([new UIDiv()], ['height3', 'width1', 'image2', 'image']),
+														new UIDiv([
+																new UIHeading(1, 'Alex & Dora')
+														], ['height1', 'width3']),
+														new UIDiv([new UIDiv()], ['height2', 'width2', 'image3', 'image']),
+														new UIDiv([new UIDiv()], ['height2', 'width2', 'image4', 'image']),
+												], 'homepage-content')
+										], ['homepage-view', 'container'])
+								], 'homepage-container')
+						]
+				),
 				new UILink('','','','','our-story'),
 				new UISection([
 					new UIDiv([
@@ -308,8 +314,8 @@
 						new UIHeading(2, 'Reception'),
 						new UIHeading(4, 'Welcome Drinks'),
 						new UIHeading(4, 'Dinner'),
-						new UIHeading(4, 'Speeches'),
 						new UIHeading(4, 'Cutting of the Cake'),
+						new UIHeading(4, 'Speeches'),
 						new UIHeading(4, 'First Dance'),
 						new UIHeading(4, 'Party'),
 						new UIHeading(4, 'Carriages')
@@ -443,13 +449,7 @@
 					], 'container')
 				], 'rsvp')
 			], 'body-sections');
-
-			echo new JSObject('',JSObject::libraryLink('jquery', '2.2.3'));
-            echo new JSObject('','bootstrap/dist/js/bootstrap.min.js');
-            echo new JSObject('','https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js');
-            echo new JSObject('','//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js');
-            echo new JSObject('','scripts/scripts.js');
-            echo new JSObject('','https://maps.googleapis.com/maps/api/js?key=AIzaSyBtPi4zADmslpF6tUoBb3iuspEmBDxDHI0&libraries=places');
+			require_once 'scripts.php';
 		?>
 	</body>
 </html>

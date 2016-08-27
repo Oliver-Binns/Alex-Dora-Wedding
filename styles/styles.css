@@ -31,6 +31,91 @@ a{
 	height:100%;
 	z-index:-1;
 }
+.homepage-container{
+	position:fixed;
+	height:100%;
+	width:100%;
+	top:0;
+	z-index:-1;
+	padding-top:51px;
+}
+.homepage-content{
+	display:inline-block;
+	width:100%;
+}
+.homepage-content div{
+	float:left;
+	display:inline;
+	padding:20px;
+}
+.homepage-content .height1{
+	height:20%;
+}
+.homepage-content .width1{
+	width:20%;
+}
+.homepage-content .height2{
+	height:40%;
+}
+.homepage-content .width2{
+	width:40%;
+}
+.homepage-content .height3{
+	height:60%;
+}
+.homepage-content .width3{
+	width:60%;
+}
+.homepage-content .countdown{
+	float:right;
+}
+.homepage-content .image div{
+	width:100%;
+	height:100%;
+	background-size:cover;
+	background-position: center center;
+}
+.homepage-content .image0 div{
+	background-image:url('../img/home/dance.jpg');
+}
+.homepage-content .image1 div{
+	background-image:url('../img/home/faces.jpg');
+}
+.homepage-content .image2 div{
+	background-image:url('../img/home/ring.jpg');
+}
+.homepage-content .image3 div{
+	background-image:url('../img/home/bench.jpg');
+}
+.homepage-content .image4 div{
+	background-image:url('../img/home/feet.jpg');
+}
+.homepage-content .countdown div{
+	background-color:#46aa03;
+}
+@media screen and (orientation: portrait) {
+	.homepage-content .height1{
+		height:40%;
+	}
+	.homepage-content .height2{
+		height:30%;
+	}
+	.homepage-content .height3{
+		height:70%;
+	}
+	/*.homepage-content .width1{
+		width:40%;
+	}*/
+	.homepage-content .width2:nth-child(2n+1){
+		width:80%;
+	}
+	.homepage-content .width2:nth-child(2n){
+		display:none;
+	}
+    /*.homepage-content .width3{
+	    width:30%;
+    }*/
+}
 #background1{
 	background-image:url('../img/main.jpg');
 }
@@ -52,10 +137,6 @@ h1{
     color:#46aa03;
     margin-bottom:45px;
     font-size:80px;
-}
-.section0{
-	width:100%;
-	height:100%;
 }
 .our-story{
 	background-color:white;
