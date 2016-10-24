@@ -19,7 +19,7 @@
 <html>
 	<head>
 		<?php require_once 'styles.php' ?>
-		<link rel="stylesheet" type="text/css" href="styles/styles.css?v=1.02">
+		<link rel="stylesheet" type="text/css" href="styles/styles.css?v=1.03">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="noindex">
 		<title>Alex & Dora</title>
@@ -443,8 +443,8 @@
 						new UIDiv(new UIDiv([new UIHeading(1, 'R.S.V.P.')], 'col-xs-12'), 'row'),
 						new UIDiv(
 						[
-							new UIDiv([new UITextBox('', 'name', 'Your Name')], 'col-xs-6'),
-							new UIDiv([new UITextBox('', 'comments', 'Comments')], 'col-xs-6'),
+							new UIDiv([new UITextBox('', 'name', 'Your Name')], ['col-sm-6', 'col-xs-12']),
+							new UIDiv([new UITextBox('', 'comments', 'Comments')], ['col-sm-6', 'col-xs-12']),
 							new UIDiv([
 								new UIDiv([
 									new UIButton("I'll be there!", '', '', 'submit', false, ['btn', 'btn-success']),

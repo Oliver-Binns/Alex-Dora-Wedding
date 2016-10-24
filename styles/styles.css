@@ -235,8 +235,10 @@ h1{
 	background-color:rgba(0,0,0,0.5);
 	min-height:0;
 }
+.rsvp .col-xs-12{
+	margin-bottom:30px;
+}
 .rsvp .btn-group{
-	margin-top:30px;
 	margin-bottom:71px;
 }
 .rsvp .btn-group .btn{
