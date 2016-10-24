@@ -68,8 +68,9 @@ a{
 }
 .homepage-content .width3{
 	width:60%;
+	display:table;
 }
-.homepage-content .countdown{
+.homepage-content .image:nth-child(3){
 	float:right;
 }
 .homepage-content .image div{
@@ -82,7 +83,8 @@ a{
 	background-image:url('../img/home/dance.jpg');
 }
 .homepage-content .image1 div{
-	background-image:url('../img/home/faces.jpg');
+	background-image:url('../img/home/stoodup.jpg');
+	background-position-x: left;
 }
 .homepage-content .image2 div{
 	background-image:url('../img/home/ring.jpg');
@@ -97,6 +99,11 @@ a{
 	background-color:#46aa03;
 	color:white;
 	font-size:20px;
+	display:table;
+}
+.homepage-container .countdown div span{
+	display:table-cell;
+	vertical-align: middle;
 }
 @media screen and (max-aspect-ratio: 3/2) {
 	.homepage-content .height1{
@@ -108,18 +115,41 @@ a{
 	.homepage-content .height3{
 		height:70%;
 	}
-	/*.homepage-content .width1{
-		width:40%;
-	}*/
+	.homepage-content .width1{
+		width:30%;
+	}
 	.homepage-content .width2:nth-child(2n+1){
-		width:80%;
+		width:70%;
 	}
 	.homepage-content .width2:nth-child(2n){
 		display:none;
 	}
-    /*.homepage-content .width3{
-	    width:30%;
-    }*/
+    .homepage-content .width3{
+	    width:40%;
+    }
+    .homepage-content h1{
+	    font-size: 7vw;
+	    display:table-cell;
+	    vertical-align: middle;
+    }
+}
+@media screen and (orientation: portrait){
+	.homepage-content div{
+		width:100% !important;
+	}
+	.homepage-content .width3{
+		height:20%;
+	}
+	.homepage-content .image{
+		display:none;
+	}
+    .homepage-content .image:first-child, .homepage-content .image:last-child{
+	    height:40% !important;
+	    display: inline;
+    }
+	.homepage-content h1 {
+		font-size: 12vw;
+	}
 }
 #background1{
 	background-image:url('../img/main.jpg');

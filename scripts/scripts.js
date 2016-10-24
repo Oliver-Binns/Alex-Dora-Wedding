@@ -178,20 +178,20 @@ function startCountdown(){
 		var hours = Math.floor( (t/(1000*60*60)) % 24 );
 		var days = Math.floor( t/(1000*60*60*24) );
 
-		var text = 'Only<br>';
+		var text = 'Only ';
 		//Calculate the number of days..
 		text += days;
-		text += ' days<br>';
+		text += ' days, ';
 		//Hours
 		text += hours;
-		text += ' hours<br>';
+		text += ' hours, ';
 		//Minutes
 		text += minutes;
-		text += ' minutes<br>';
+		text += ' minutes and ';
 		//Seconds
 		text += seconds;
-		text += ' seconds<br>';
-		text += 'until the<br>big day!';
+		text += ' seconds ';
+		text += 'until the big day!';
 		$('.countdown div').html('<span>' + text + '</span>');
 	};
 

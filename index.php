@@ -285,14 +285,14 @@
 										new UIDiv([
 												new UIDiv([
 														new UIDiv([new UIDiv()], ['height2', 'width2', 'image0', 'image']),
-														new UIDiv([new UIDiv()], ['height2', 'width2', 'image1', 'image']),
-														new UIDiv([new UIDiv()], ['height3', 'width1', 'countdown', 'image']),
+														new UIDiv([new UIDiv()], ['height2', 'width2', 'image4', 'image']),
+														new UIDiv([new UIDiv()], ['height3', 'width1', 'image1', 'image']),
 														new UIDiv([new UIDiv()], ['height3', 'width1', 'image2', 'image']),
 														new UIDiv([
 																new UIHeading(1, 'Alex & Dora')
 														], ['height1', 'width3']),
 														new UIDiv([new UIDiv()], ['height2', 'width2', 'image3', 'image']),
-														new UIDiv([new UIDiv()], ['height2', 'width2', 'image4', 'image']),
+														new UIDiv([new UIDiv()], ['height2', 'width2', 'countdown', 'image']),
 												], 'homepage-content')
 										], ['homepage-view', 'container'])
 								], 'homepage-container')
