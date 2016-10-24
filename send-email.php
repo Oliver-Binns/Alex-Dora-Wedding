@@ -13,6 +13,15 @@
 	$mail->Password = $password;
 	$mail->SetFrom($username, "Oliver Binns");
 	$mail->Subject = "Wedding RSVP";
+	
+	$content = $_POST['name'].' rsvped as ';
+	if($_POST['status'] == "Sorry, I can't make it."){
+		$content.= '<b>not attending</b>.';
+	}else{
+		$content.= '<b>attending</b>.';
+	}
+	$content.= '<br><br>' . $_POST['comments'];
+	
 	$mail->Body = $content;
 	$mail->AddAddress("alexbinns@aol.com", 'chatzigeorgioudorothea@gmail.com');
 	$mail->addCC('mail@oliverbinns.co.uk');

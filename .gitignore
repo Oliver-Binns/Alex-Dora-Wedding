@@ -3,3 +3,4 @@ phpUI/
 .idea/
 config.php
 local-*.php
+PHPMailer/*
