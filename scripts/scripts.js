@@ -199,3 +199,20 @@ function startCountdown(){
 	updateTimer();
 
 }
+
+function sendRSVP(button){
+	var reason = button.innerText;
+	var container = $(button).parent().parent().parent();
+	var name = container.find("input[name='name']").val();
+	var comments = container.find("input[name='comments']").val();
+
+	if(name != ""){
+		$.post(
+			"send-email.php",
+			{
+				name: name,
+				comments: comments,
+				status: reason
+			}, function(data){ console.log(data); });
+	}
+}

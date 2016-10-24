@@ -447,8 +447,8 @@
 							new UIDiv([new UITextBox('', 'comments', 'Comments')], ['col-sm-6', 'col-xs-12']),
 							new UIDiv([
 								new UIDiv([
-									new UIButton("I'll be there!", '', '', 'submit', false, ['btn', 'btn-success']),
-									new UIButton("Sorry, I can't make it.", '', '', 'submit', false, ['btn', 'btn-danger'])
+									new UIButton("I'll be there!", 'sendRSVP(this);', '', 'submit', false, ['btn', 'btn-success']),
+									new UIButton("Sorry, I can't make it.", 'sendRSVP(this);', '', 'submit', false, ['btn', 'btn-danger'])
 								], 'btn-group')
 							], 'col-xs-12'),
 						],
