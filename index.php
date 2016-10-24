@@ -3,6 +3,8 @@
 	use phpHTML\UICore\UIDiv;
 	use phpHTML\UICore\UIHeading;
 	use phpHTML\UICore\UIImage;
+	use phpHTML\UICore\UIInput\UIButton;
+	use phpHTML\UICore\UIInput\UICheckbox;
 	use phpHTML\UICore\UIInput\UIDatePicker;
 	use phpHTML\UICore\UIInput\UIDropdown;
 	use phpHTML\UICore\UIInput\UITextBox;
@@ -270,10 +272,9 @@
 				new UILink('The Wedding Day', '#the-day'),
 				//new UILink('Travel','#travel'),
 				new UILink('Recommendations', '#recommendations'),
-				new UILink('RSVP', '#rsvp')
+				new UILink('R.S.V.P.', '#rsvp')
 			], [], [], UINav::FIXED_TOP);
-
-			//echo
+			
 			echo new UISection([], 'background', 'background2');
 
 			echo new UIDiv([
@@ -439,11 +440,17 @@
 				new UILink('','','','','rsvp'),
 				new UISection([
 					new UIDiv([
-						new UIDiv(new UIDiv([new UIHeading(1, 'RSVP')], 'col-xs-12'), 'row'),
+						new UIDiv(new UIDiv([new UIHeading(1, 'R.S.V.P.')], 'col-xs-12'), 'row'),
 						new UIDiv(
 						[
-							new UIDiv([new UITextBox('', 'Name', 'Your Name')], 'col-xs-6'),
-							new UIDiv([new UITextBox()], 'col-xs-6')
+							new UIDiv([new UITextBox('', 'name', 'Your Name')], 'col-xs-6'),
+							new UIDiv([new UITextBox('', 'comments', 'Comments')], 'col-xs-6'),
+							new UIDiv([
+								new UIDiv([
+									new UIButton("I'll be there!", '', '', 'submit', false, ['btn', 'btn-success']),
+									new UIButton("Sorry, I can't make it.", '', '', 'submit', false, ['btn', 'btn-danger'])
+								], 'btn-group')
+							], 'col-xs-12'),
 						],
 							'row')
 					], 'container')

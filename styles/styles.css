@@ -125,7 +125,7 @@ a{
 	background-image:url('../img/main.jpg');
 }
 #background2{
-	background-image:url('../img/beach.jpg');
+	background-image:url('../img/lily.jpg');
 	display:none;
 }
 .body-sections{
@@ -156,7 +156,10 @@ h1{
 }
 .the-day{
 	color:white;
-	background-color:rgba(0,0,0,0.7);
+	background-color:#46aa03;
+}
+.the-day h1{
+	color:white;
 }
 .travel{
     color:white;
@@ -227,4 +230,18 @@ h1{
 }
 .do_not_show{
 	display:none;
+}
+.rsvp{
+	background-color:rgba(0,0,0,0.5);
+	min-height:0;
+}
+.rsvp .btn-group{
+	margin-top:30px;
+	margin-bottom:71px;
+}
+.rsvp .btn-group .btn{
+	width:170px;
+}
+.rsvp h1{
+	color:white;
 }
