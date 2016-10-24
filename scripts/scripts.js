@@ -16,8 +16,10 @@ $(function(){
 	$(window).scroll(function() {
 		if(window.pageYOffset < window.innerHeight){
 			$('#background2').css('display', 'none');
+			$('.homepage-container').css('display', 'block');
 		}else{
 			$('#background2').css('display', 'block');
+			$('.homepage-container').css('display', 'none');
 		}
 	});
 	setupSlick();
@@ -176,11 +178,21 @@ function startCountdown(){
 		var hours = Math.floor( (t/(1000*60*60)) % 24 );
 		var days = Math.floor( t/(1000*60*60*24) );
 
-		var text = 'Only ';
+		var text = 'Only<br>';
 		//Calculate the number of days..
 		text += days;
-		text += ' days until the big day!';
-		$('.countdown div').html(text);
+		text += ' days<br>';
+		//Hours
+		text += hours;
+		text += ' hours<br>';
+		//Minutes
+		text += minutes;
+		text += ' minutes<br>';
+		//Seconds
+		text += seconds;
+		text += ' seconds<br>';
+		text += 'until the<br>big day!';
+		$('.countdown div').html('<span>' + text + '</span>');
 	};
 
 	setInterval(updateTimer, 1000);

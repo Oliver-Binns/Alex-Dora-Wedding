@@ -268,7 +268,7 @@
 				new UILink('Home', '#home'),
 				new UILink('Our Story', '#our-story'),
 				new UILink('The Wedding Day', '#the-day'),
-				new UILink('Travel','#travel'),
+				//new UILink('Travel','#travel'),
 				new UILink('Recommendations', '#recommendations'),
 				new UILink('RSVP', '#rsvp')
 			], [], [], UINav::FIXED_TOP);
@@ -321,7 +321,7 @@
 						new UIHeading(4, 'Carriages')
 					], 'container')
 				], 'the-day'),
-				new UILink('','','','','travel'),
+				/*new UILink('','','','','travel'),
 				new UISection([
 						    new UIDiv([
                                 new UIDiv([

@@ -39,6 +39,9 @@ a{
 	z-index:-1;
 	padding-top:51px;
 }
+.homepage-container h1{
+	margin:0;
+}
 .homepage-content{
 	display:inline-block;
 	width:100%;
@@ -92,6 +95,8 @@ a{
 }
 .homepage-content .countdown div{
 	background-color:#46aa03;
+	color:white;
+	font-size:20px;
 }
 @media screen and (orientation: portrait) {
 	.homepage-content .height1{
@@ -145,7 +150,8 @@ h1{
     text-align:center;
 }
 .the-day{
-	background-color:#ffd1dc;
+	color:white;
+	background-color:rgba(0,0,0,0.7);
 }
 .travel{
     color:white;
