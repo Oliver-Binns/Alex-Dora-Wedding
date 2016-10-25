@@ -13,7 +13,7 @@ $(function(){
 		addCurrencies();
 	});
 
-	$(window).scroll(function() {
+	var scrollFunction = function() {
 		if(window.pageYOffset < window.innerHeight){
 			$('#background2').css('display', 'none');
 			$('.homepage-container').css('display', 'block');
@@ -21,7 +21,11 @@ $(function(){
 			$('#background2').css('display', 'block');
 			$('.homepage-container').css('display', 'none');
 		}
-	});
+	};
+
+	document.addEventListener("scroll", scrollFunction, false);
+	document.addEventListener("touchmove", scrollFunction, false);
+
 	setupSlick();
 	startCountdown();
 });
