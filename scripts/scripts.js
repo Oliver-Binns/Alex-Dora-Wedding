@@ -28,6 +28,7 @@ $(function(){
 
 	setupSlick();
 	startCountdown();
+    scrollFunction();
 });
 
 function addCurrencies(){
@@ -207,16 +208,47 @@ function startCountdown(){
 function sendRSVP(button){
 	var reason = button.innerText;
 	var container = $(button).parent().parent().parent();
-	var name = container.find("input[name='name']").val();
-	var comments = container.find("input[name='comments']").val();
+	var name_box = container.find("input[name='name']")
+    var name = name_box.val();
+	var comments_box = container.find("input[name='comments']");
 
 	if(name != ""){
+        $(button).children().html('<span class="glyphicon glyphicon-refresh"></span> Sending...');
 		$.post(
 			"send-email.php",
 			{
 				name: name,
-				comments: comments,
+				comments: comments_box.val(),
 				status: reason
-			}, function(data){ console.log(data); });
+			}, function(data){
+                if(data == 'success'){
+                    button.innerHTML = '<p><span class="glyphicon glyphicon-send"></span> Sent</p>';
+                }else{
+                    button.innerHTML = '<p><span class="glyphicon glyphicon-exclamation-sign"></span> Error</p>';
+                }
+            });
+
+        name_box.val('');
+        comments_box.val('');
+
+        container.find('input').animate({
+            height:0,
+            paddingTop: 0,
+            paddingBottom:0
+        }, 250, function(){
+            container.find('input').css('display', 'none');
+        });
+
+        $(button).siblings().animate({
+            width:0,
+            paddingLeft:0,
+            paddingRight:0,
+            opacity:0
+        }, 250, function(){
+            $(button).siblings().remove();
+        });
+        container.find('button').animate({
+            marginTop: '+=34px'
+        }, 250);
 	}
 }

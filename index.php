@@ -19,7 +19,7 @@
 <html>
 	<head>
 		<?php require_once 'styles.php' ?>
-		<link rel="stylesheet" type="text/css" href="styles/styles.css?v=1.03">
+		<link rel="stylesheet" type="text/css" href="styles/styles.css?v=1.04">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="noindex">
 		<title>Alex & Dora</title>
@@ -447,8 +447,8 @@
 							new UIDiv([new UITextBox('', 'comments', 'Comments')], ['col-sm-6', 'col-xs-12']),
 							new UIDiv([
 								new UIDiv([
-									new UIButton("I'll be there!", 'sendRSVP(this);', '', 'submit', false, ['btn', 'btn-success']),
-									new UIButton("Sorry, I can't make it.", 'sendRSVP(this);', '', 'submit', false, ['btn', 'btn-danger'])
+									new UIButton("<p>I'll be there!</p>", 'sendRSVP(this);', '', 'submit', false, ['btn', 'btn-success']),
+									new UIButton("<p>Sorry, I can't make it.</p>", 'sendRSVP(this);', '', 'submit', false, ['btn', 'btn-danger'])
 								], 'btn-group')
 							], 'col-xs-12'),
 						],
@@ -456,7 +456,7 @@
 					], 'container')
 				], 'rsvp')
 			], 'body-sections');
-			require_once 'scripts.php';
+			require_once 'scripts.php?v=1.01';
 		?>
 	</body>
 </html>

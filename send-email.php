@@ -23,7 +23,8 @@
 	$content.= '<br><br>' . $_POST['comments'];
 	
 	$mail->Body = $content;
-	$mail->AddAddress("alexbinns@aol.com", 'chatzigeorgioudorothea@gmail.com');
+	$mail->AddAddress("alexbinns@aol.com");
+	$mail->AddAddress('chatzigeorgioudorothea@gmail.com');
 	$mail->addCC('mail@oliverbinns.co.uk');
 	$mail->isHTML(true);
 	if($mail->Send()) {
