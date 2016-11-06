@@ -456,7 +456,7 @@
 					], 'container')
 				], 'rsvp')
 			], 'body-sections');
-			require_once 'scripts.php?v=1.01';
+			require_once 'scripts.php';
 		?>
 	</body>
 </html>
